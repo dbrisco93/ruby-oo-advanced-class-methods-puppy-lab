@@ -8,7 +8,7 @@ class Dog
 
     def initialize(name)
         @name = name
-        @@all = save
+        save
     end
 
     def self.all
@@ -16,7 +16,8 @@ class Dog
     end
 
     def self.print_all
-        puts @@all
+        names = Dog.all.map { |dogs| dogs.name }
+        puts names
         
     end
 
@@ -27,5 +28,7 @@ class Dog
     def self.clear_all
         @@all.clear
     end
+
+    
 
 end
